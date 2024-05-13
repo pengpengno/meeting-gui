@@ -1,0 +1,19 @@
+module com.github.peng.meetinggui {
+    requires javafx.controls;
+    requires javafx.fxml;
+    requires org.controlsfx.controls;
+    requires net.synedra.validatorfx;
+    requires org.kordamp.bootstrapfx.core;
+    requires static lombok;
+    requires com.github.peng.meeting.common;
+    requires hutool.all;
+    requires spring.context;
+    requires spring.core;
+    requires java.desktop;
+    requires spring.beans;
+
+    exports com.github.meeting.gui.app;
+    opens com.github.meeting.gui.app to javafx.fxml;
+    exports com.github.peng;
+    opens com.github.peng to javafx.fxml;
+}

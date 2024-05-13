@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+<!--  <parent>-->
+<!--&lt;!&ndash;    <groupId>com.github.meeting</groupId>&ndash;&gt;-->
+<!--    <groupId>io.github.pengpengno</groupId>-->
+<!--    <artifactId>meeting</artifactId>-->
+<!--    <version>1.0</version>-->
+<!--    <relativePath>../pom.xml</relativePath>-->
+<!--  </parent>-->
+  <groupId>io.github.pengpengno</groupId>
+  <artifactId>meeting-gui</artifactId>
+  <version>1.0.0</version>
+
+  <properties>
+    <mapstruct.version>1.5.3.Final</mapstruct.version>
+    <guice.version>5.1.0</guice.version>
+    <lombok.version>1.18.30</lombok.version>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.plugin.version>3.8.0</maven.plugin.version>
+    <junit.version>5.9.2</junit.version>
+    <attach.version>4.0.20</attach.version>
+    <charm.version>6.2.3</charm.version>
+    <javafx.version>21</javafx.version>
+    <javacv.version>1.5.9</javacv.version>
+    <gluonfx.maven.plugin.version>1.0.22</gluonfx.maven.plugin.version>
+    <main.class>com.github.meeting.gui.Application</main.class>
+    <app.description>The HelloGluon app</app.description>
+    <app.identifier>${main.class}</app.identifier>
+    <package.type/>
+    <mac.app.store/>
+    <mac.signing.user.name/>
+    <bundle.version/>
+    <bundle.short.version/>
+    <version.code/>
+    <provided.keystore.path/>
+    <provided.keystore.password/>
+    <provided.key.alias/>
+    <provided.key.alias.password/>
+  </properties>
+
+  <dependencies>
+
+<!--    <dependency>-->
+<!--      <groupId>org.bytedeco</groupId>-->
+<!--      <artifactId>ffmpeg-platform</artifactId>-->
+<!--      <version>6.0-1.5.10</version>-->
+<!--    </dependency>-->
+
+<!--    <dependency>-->
+<!--      <groupId>org.bytedeco</groupId>-->
+<!--      <artifactId>javacv</artifactId>-->
+<!--      <version>${javacv.version}</version>-->
+<!--    </dependency>-->
+
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>${javafx.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-web</artifactId>
+      <version>${javafx.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-media</artifactId>
+      <version>${javafx.version}</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>${javafx.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.controlsfx</groupId>
+      <artifactId>controlsfx</artifactId>
+      <version>11.1.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>net.synedra</groupId>
+      <artifactId>validatorfx</artifactId>
+      <version>0.4.0</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.openjfx</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.kordamp.bootstrapfx</groupId>
+      <artifactId>bootstrapfx-core</artifactId>
+      <version>0.4.0</version>
+    </dependency>
+  <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+      <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <scope>compile</scope>
+        <version>${lombok.version}</version>
+      </dependency>
+    <dependency>
+      <groupId>com.jfoenix</groupId>
+      <artifactId>jfoenix</artifactId>
+      <version>9.0.10</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>com.gluonhq</groupId>
+      <artifactId>charm-glisten</artifactId>
+      <version>${charm.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.gluonhq.attach</groupId>
+      <artifactId>display</artifactId>
+      <version>${attach.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.gluonhq.attach</groupId>
+      <artifactId>lifecycle</artifactId>
+      <version>${attach.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.gluonhq.attach</groupId>
+      <artifactId>statusbar</artifactId>
+      <version>${attach.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.gluonhq.attach</groupId>
+      <artifactId>storage</artifactId>
+      <version>${attach.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.gluonhq.attach</groupId>
+      <artifactId>util</artifactId>
+      <version>${attach.version}</version>
+    </dependency>
+
+      <dependency>
+        <groupId>io.github.pengpengno</groupId>
+          <artifactId>meeting-common</artifactId>
+          <version>1.0</version>
+          <scope>compile</scope>
+      </dependency>
+
+  </dependencies>
+
+  <build>
+    <finalName>${project.artifactId}-${project.version}</finalName>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <testSourceDirectory>src/main/test</testSourceDirectory>
+<!--    <resources>-->
+<!--      <resource>-->
+<!--        <directory>src/main/resources</directory>-->
+<!--        <includes>-->
+<!--          <include>**/*</include>-->
+<!--        </includes>-->
+<!--      </resource>-->
+<!--    </resources>-->
+
+    <extensions>
+      <extension>
+        <groupId>kr.motd.maven</groupId>
+        <artifactId>os-maven-plugin</artifactId>
+      </extension>
+    </extensions>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.plugin.version}</version>
+        <configuration>
+          <encoding>${project.build.sourceEncoding}</encoding>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
+            </path>
+            <path>
+              <groupId>org.mapstruct</groupId>
+              <artifactId>mapstruct-processor</artifactId>
+              <version>${mapstruct.version}</version>
+            </path>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok-mapstruct-binding</artifactId>
+              <version>0.2.0</version>
+            </path>
+          </annotationProcessorPaths>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>com.gluonhq</groupId>
+        <artifactId>gluonfx-maven-plugin</artifactId>
+        <version>${gluonfx.maven.plugin.version}</version>
+        <configuration>
+<!--          <graalvmHome>/home/pengpeng</graalvmHome>-->
+          <verbose>true</verbose>
+          <target>${gluonfx.target}</target>
+          <attachList>
+            <list>display</list>
+            <list>lifecycle</list>
+            <list>statusbar</list>
+            <list>storage</list>
+          </attachList>
+          <mainClass>${main.class}</mainClass>
+          <appIdentifier>${app.identifier}</appIdentifier>
+          <releaseConfiguration>
+            <vendor>Gluon</vendor>
+            <description>${app.description}</description>
+            <packageType>${package.type}</packageType>
+            <!-- for macOS/iOS -->
+            <macAppStore>${mac.app.store}</macAppStore>
+            <bundleShortVersion>${bundle.short.version}</bundleShortVersion>
+            <bundleVersion>${bundle.version}</bundleVersion>
+            <!-- for Android -->
+            <versionCode>${version.code}</versionCode>
+            <providedKeyStorePath>${provided.keystore.path}</providedKeyStorePath>
+            <providedKeyStorePassword>${provided.keystore.password}</providedKeyStorePassword>
+            <providedKeyAlias>${provided.key.alias}</providedKeyAlias>
+            <providedKeyAliasPassword>${provided.key.alias.password}</providedKeyAliasPassword>
+          </releaseConfiguration>
+        </configuration>
+      </plugin>
+
+
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <sourceDirectory>src/main/java</sourceDirectory>
+          <mainClass>com.github.peng.Launcher</mainClass>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>0.0.8</version>
+        <configuration>
+          <mainClass>${main.class}</mainClass>
+        </configuration>
+        <executions>
+          <execution>
+            <!-- Default configuration for running with: mvn clean javafx:run -->
+            <id>default-cli</id>
+            <configuration>
+              <mainClass>${main.class}</mainClass>
+              <launcher>app</launcher>
+              <jlinkZipName>app</jlinkZipName>
+              <jlinkImageName>app</jlinkImageName>
+              <noManPages>true</noManPages>
+              <stripDebug>true</stripDebug>
+              <noHeaderFiles>true</noHeaderFiles>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>aliyun</id>
+      <url>https://maven.aliyun.com/repository/public</url>
+    </repository>
+
+    <repository>
+      <id>gluon-releases</id>
+      <url>https://nexus.gluonhq.com/nexus/content/repositories/releases</url>
+    </repository>
+
+    <repository>
+      <id>Gluon</id>
+      <url>https://nexus.gluonhq.com/nexus/content/repositories/releases</url>
+    </repository>
+    <repository>
+      <id>snapshot</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+    </repository>
+  </repositories>
+
+
+  <profiles>
+    <profile>
+      <id>desktop</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <gluonfx.target>host</gluonfx.target>
+      </properties>
+    </profile>
+    <profile>
+      <id>mac</id>
+      <properties>
+        <package.type>pkg</package.type>
+        <mac.app.store>false</mac.app.store>
+        <!--suppress UnresolvedMavenProperty -->
+        <bundle.version>${env.GITHUB_RUN_NUMBER}</bundle.version>
+        <bundle.short.version>1.0</bundle.short.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>macstore</id>
+      <properties>
+        <package.type>pkg</package.type>
+        <mac.app.store>true</mac.app.store>
+        <!--suppress UnresolvedMavenProperty -->
+        <bundle.version>1.${env.GITHUB_RUN_NUMBER}</bundle.version>
+        <bundle.short.version>1.6</bundle.short.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>ios</id>
+      <properties>
+        <gluonfx.target>ios</gluonfx.target>
+        <!--suppress UnresolvedMavenProperty -->
+        <bundle.version>${env.GITHUB_RUN_NUMBER}</bundle.version>
+        <bundle.short.version>1.0</bundle.short.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>android</id>
+      <properties>
+        <gluonfx.target>android</gluonfx.target>
+        <app.identifier>com.gluonhq.samples.hellogluon</app.identifier>
+        <!--suppress UnresolvedMavenProperty -->
+        <version.code>${env.GITHUB_RUN_NUMBER}</version.code>
+        <!--suppress UnresolvedMavenProperty -->
+        <provided.keystore.path>${env.GLUON_ANDROID_KEYSTOREPATH}</provided.keystore.path>
+        <!--suppress UnresolvedMavenProperty -->
+        <provided.keystore.password>${env.GLUON_ANDROID_KEYSTORE_PASSWORD}</provided.keystore.password>
+        <!--suppress UnresolvedMavenProperty -->
+        <provided.key.alias>${env.GLUON_ANDROID_KEYALIAS}</provided.key.alias>
+        <!--suppress UnresolvedMavenProperty -->
+        <provided.key.alias.password>${env.GLUON_ANDROID_KEYALIAS_PASSWORD}</provided.key.alias.password>
+      </properties>
+    </profile>
+    <profile>
+      <id>pi</id>
+      <properties>
+        <gluonfx.target>linux-aarch64</gluonfx.target>
+      </properties>
+    </profile>
+  </profiles>
+</project>
